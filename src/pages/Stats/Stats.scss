@@ -1,0 +1,17 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .top {
+    display: flex;
+    gap: 10px;
+    .left,
+    .right {
+      flex: 1;
+    }
+  }
+  .center {
+  }
+  .bottom {
+  }
+}

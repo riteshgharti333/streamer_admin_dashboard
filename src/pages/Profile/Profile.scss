@@ -1,0 +1,160 @@
+@import "../../style/responsive.scss";
+
+.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+
+  h1 {
+    font-size: 40px;
+    font-family: "Gabarito", sans-serif;
+    text-align: center;
+  }
+
+  .settingsWrapper {
+    width: 400px;
+    background-color: #8ec5fc;
+    background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+
+    padding: 20px 40px;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 50px;
+    @include sm {
+      margin: 0px 10px;
+      padding: 10px;
+    }
+    .profileData {
+      .right {
+        font-family: "Gabarito", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .updateMode {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+          .inputValid {
+            .inputType {
+              input {
+                font-family: "Gabarito", sans-serif;
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid black;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                outline: none;
+              }
+            }
+            .formError {
+              color: rgb(248, 2, 2);
+            }
+          }
+        }
+
+        .profileName {
+          h3 {
+            text-align: center;
+            margin: 15px 0px;
+            font-size: 25px;
+            font-family: "Gabarito", sans-serif;
+          }
+        }
+
+        .profileEmail {
+          p {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Gabarito", sans-serif;
+          }
+        }
+
+        .profileInputForm {
+          .formError {
+            color: red;
+            font-weight: 600;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .profileEditBtn {
+      display: flex;
+      button {
+        font-weight: bold;
+        border: none;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: aqua;
+        border-radius: 3px;
+        padding: 5px 10px;
+        color: white;
+        cursor: pointer;
+        letter-spacing: 2px;
+        width: 100%;
+        margin: 10px 0px;
+        letter-spacing: 2px;
+        margin-left: 10px;
+        font-family: "Bebas Neue", sans-serif;
+
+        &:hover {
+          background-color: rgb(25, 175, 175);
+        }
+
+        &:first-child {
+          background-color: red;
+
+          &:hover {
+            background-color: rgb(182, 17, 17);
+          }
+        }
+      }
+    }
+    .changePwd {
+      letter-spacing: 2px;
+      text-align: center;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+    }
+  }
+}
+.openCancel {
+  position: absolute;
+  padding: 10px;
+  right: 50px;
+  z-index: 20;
+  border-radius: 3px;
+
+  @include sm {
+    top: 60px;
+  }
+
+  .openCancelInfo {
+    p {
+      color: black;
+    }
+    button {
+      border-radius: 3px;
+      padding: 5px;
+      border: none;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      float: right;
+      cursor: pointer;
+      margin-left: 10px;
+      background-color: aqua;
+    }
+
+    :last-child {
+      background-color: rgb(209, 16, 16);
+    }
+  }
+}

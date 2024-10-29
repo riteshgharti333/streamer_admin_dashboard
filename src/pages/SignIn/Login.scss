@@ -1,0 +1,115 @@
+@import "../../style/responsive.scss";
+
+.login {
+  height: 100vh;
+  position: relative;
+  .top {
+    .wrapper {
+      padding: 10px;
+      h1 {
+        text-align: center;
+        color: green;
+        font-size: 40px;
+      }
+    }
+  }
+
+  .input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px;
+    gap: 20px;
+    border-radius: 6px;
+    box-shadow:
+      rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    min-width: 300px;
+    @include sm{
+      padding: 20px;
+      min-width: 300px;
+    }
+
+    @include md{
+      padding: 20px;
+      min-width: 300px;
+    }
+
+    h1 {
+      font-family: "Gabarito", sans-serif;
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .inputValid {
+      display: flex;
+      flex-direction: column;
+      .inputType {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-radius: 10px;
+        padding: 10px 30px;
+
+        .inputIcon {
+          font-size: 30px;
+          margin-right: 10px;
+        }
+
+        input {
+          background: transparent;
+          border: none;
+          width: 100%;
+          font-size: 15px;
+          font-family: "Gabarito", sans-serif;
+          &::placeholder {
+            color: black;
+            font-size: 18px;
+            font-family: "Gabarito", sans-serif;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .formError {
+        font-family: "Gabarito", sans-serif;
+        color: red;
+      }
+    }
+
+    span {
+      font-family: "Gabarito", sans-serif;
+
+      .signupLink {
+        color: green;
+        font-weight: bold;
+      }
+    }
+
+    .warning {
+      color: red;
+    }
+
+    button {
+      font-size: 20px;
+      font-family: "Gabarito", sans-serif;
+      border: none;
+      padding: 10px 0px;
+      border-radius: 4px;
+      font-weight: 600;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(207, 203, 203);
+      }
+    }
+  }
+}

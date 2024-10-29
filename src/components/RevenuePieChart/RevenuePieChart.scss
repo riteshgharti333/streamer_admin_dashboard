@@ -1,0 +1,49 @@
+.revenuePieChartContainer {
+  display: flex;
+  .pieChart {
+    flex: 1;
+  }
+
+  .pieInfo {
+    flex: 1;
+    p {
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(160, 160, 160);
+      flex: 5;
+    }
+    .plans {
+      margin-top: 30px;
+      p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        color: #00c49f;
+
+        &:first-child {
+          color: #0088fe;
+          .dot {
+            background-color: #0088fe;
+          }
+        }
+
+        &:last-child {
+          color: #ffbb28;
+          .dot {
+            background-color: #ffbb28;
+          }
+        }
+        .dot {
+          background-color: #00c49f;
+          height: 5px;
+          width: 5px;
+          display: inline-block;
+          margin-right: 6px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

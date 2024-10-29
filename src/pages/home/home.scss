@@ -1,0 +1,23 @@
+@import "../../style/responsive.scss";
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include md{
+    min-height:  100vh;
+  }
+  .widgets,
+  .charts {
+    display: flex;
+    gap: 10px;
+  }
+
+  .charts {
+  }
+
+  .listContainer {
+  }
+}

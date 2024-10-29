@@ -1,0 +1,101 @@
+.earnings {
+  .earningsBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      height: 200px;
+
+      .topLeft,
+      .topRight {
+        background-color: white;
+        box-shadow:
+          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transition: all 0.2s ease-in;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+          transform: scale(1.01);
+          box-shadow:
+            10px 10px 10px #bebebe,
+            -1px -1px 15px #ffffff;
+          transition: 0.2s ease-in-out;
+        }
+      }
+
+      .topLeft {
+        flex: 1;
+        margin-right: 10px;
+        font-family: "Poppins", sans-serif;
+
+        .topLeftInfo {
+          display: flex;
+          justify-content: space-between;
+
+          .items {
+            p {
+              font-weight: bold;
+              font-size: 20px;
+              color: rgb(160, 160, 160);
+            }
+
+            span {
+              font-family: "Poppins", sans-serif;
+              font-size: 30px;
+              font-weight: 800;
+              color: #6439ff;
+            }
+          }
+        }
+        .leftBottomInfo {
+          display: flex;
+          justify-content: space-between;
+
+          .items {
+            p {
+              font-weight: bold;
+            }
+
+            span {
+              font-family: "Poppins", sans-serif;
+              font-size: 16px;
+              font-weight: 800;
+              color: #6439ff;
+            }
+          }
+        }
+      }
+      .topRight {
+        flex: 1;
+
+        .topRightInfo {
+        }
+      }
+    }
+
+    .center {
+      .widgets {
+        .widgetsInfo {
+          display: flex;
+          overflow: hidden;
+          gap: 10px;
+        }
+      }
+    }
+
+    .bottom {
+      // height: 400px;
+      .charts {
+        p {
+          font-weight: bold;
+          font-size: 20px;
+          color: rgb(160, 160, 160);
+        }
+      }
+    }
+  }
+}

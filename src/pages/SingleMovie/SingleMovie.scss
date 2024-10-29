@@ -1,0 +1,176 @@
+.singleMovie {
+  .singleMovieBtn {
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+
+    h1 {
+      text-transform: uppercase;
+    }
+
+    button {
+      background-color: red;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .singleMovieContainer {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+
+    form {
+      .top {
+        display: flex;
+        justify-content: space-between;
+        .formInput {
+          p {
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+
+          img {
+            width: 300px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+
+            box-shadow:
+              rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+              transform: scale(1.01);
+              box-shadow:
+                10px 10px 10px #bebebe,
+                -1px -1px 15px #ffffff;
+              transition: 0.2s ease-in-out;
+            }
+          }
+        }
+      }
+
+      .center {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+
+        .formInput {
+          position: relative;
+          padding: 10px 0 0;
+          width: 100%;
+
+          p {
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+          input {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #9b9b9b;
+            outline: 0;
+            font-size: 17px;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+
+            &::placeholder {
+              color: transparent;
+            }
+
+            &:placeholder-shown ~ label {
+              font-size: 17px;
+              cursor: text;
+              top: 30px;
+            }
+
+            &:focus {
+              padding-bottom: 6px;
+              font-weight: 700;
+              border-width: 3px;
+              border-image: linear-gradient(to right, #116399, #38caef);
+              border-image-slice: 1;
+            }
+
+            &:focus ~ label {
+              position: absolute;
+              top: 0;
+              display: block;
+              transition: 0.2s;
+              font-size: 17px;
+              color: #38caef;
+              font-weight: 700;
+            }
+
+            &:required,
+            &:invalid {
+              box-shadow: none;
+            }
+          }
+
+          label {
+            position: absolute;
+            top: -10px;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            font-weight: bold;
+            pointer-events: none;
+          }
+        }
+      }
+      .bottom {
+        display: flex;
+        margin: 20px 0px;
+        .bottomInput {
+          display: flex;
+          flex-direction: column;
+          margin-right: 50px;
+          label {
+            font-weight: bold;
+          }
+          select {
+            padding: 10px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: normal;
+
+            option {
+              font-weight: bold;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      .singleMovieButton {
+        button {
+          border: none;
+          background-color: red;
+          font-size: 16px;
+          padding: 10px;
+          margin-right: 10px;
+          font-weight: bold;
+          cursor: pointer;
+
+          &:first-child {
+            background-color: green;
+          }
+        }
+      }
+    }
+  }
+}
