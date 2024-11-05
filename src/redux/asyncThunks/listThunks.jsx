@@ -13,8 +13,8 @@ export const getAsyncLists = createAsyncThunk(
   "lists/getLists",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await getLists();
-      return res.data;
+      const response = await getLists();
+      return response.data;
     } catch (error) {
       console.log(error);
       return rejectWithValue(error.response.data || "Failed to fetch lists");
@@ -27,8 +27,8 @@ export const getAsyncQueryLists = createAsyncThunk(
   "lists/getQueryLists",
   async (query, { rejectWithValue }) => {
     try {
-      const res = await getQueryLists(query);
-      return res.data;
+      const response = await getQueryLists(query);
+      return response.data;
     } catch (error) {
       console.log(error);
       return rejectWithValue(
@@ -43,8 +43,8 @@ export const getAsyncSingleList = createAsyncThunk(
   "lists/getSingleList",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await getSingleList(id);
-      return res.data;
+      const response = await getSingleList(id);
+      return response.data;
     } catch (error) {
       console.log(error);
       return rejectWithValue(
@@ -60,7 +60,6 @@ export const deleteAsyncSingleList = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       await deleteSingleList(id);
-      console.log(id);
       return id;
     } catch (error) {
       console.log(error);
@@ -96,7 +95,6 @@ export const createAsyncSingleList = createAsyncThunk(
         content,
       };
       const response = await createSingleList(newList);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);

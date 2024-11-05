@@ -8,7 +8,7 @@
       padding: 10px;
       h1 {
         text-align: center;
-        color: green;
+        color: #008000;
         font-size: 40px;
       }
     }
@@ -24,16 +24,15 @@
     padding: 30px 60px;
     gap: 20px;
     border-radius: 6px;
-    box-shadow:
-      rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
       rgba(0, 0, 0, 0.23) 0px 6px 6px;
     min-width: 300px;
-    @include sm{
+    @include sm {
       padding: 20px;
       min-width: 300px;
     }
 
-    @include md{
+    @include md {
       padding: 20px;
       min-width: 300px;
     }
@@ -52,7 +51,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: white;
+        background: #fff;
         border-radius: 10px;
         padding: 10px 30px;
 
@@ -68,7 +67,7 @@
           font-size: 15px;
           font-family: "Gabarito", sans-serif;
           &::placeholder {
-            color: black;
+            color: #000000;
             font-size: 18px;
             font-family: "Gabarito", sans-serif;
           }
@@ -80,7 +79,7 @@
       }
       .formError {
         font-family: "Gabarito", sans-serif;
-        color: red;
+        color: #ff0000;
       }
     }
 
@@ -88,13 +87,13 @@
       font-family: "Gabarito", sans-serif;
 
       .signupLink {
-        color: green;
+        color: #008000;
         font-weight: bold;
       }
     }
 
     .warning {
-      color: red;
+      color: #ff0000;
     }
 
     button {

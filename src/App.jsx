@@ -44,7 +44,6 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="/" element={<DashboardLayout />}>
-
             <Route path="changepassword" element={<UpdatePassword />} />
             <Route path="earnings" element={<Earnings />} />
             <Route path="stats" element={<Stats />} />

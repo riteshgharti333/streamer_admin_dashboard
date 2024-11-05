@@ -11,15 +11,14 @@ export const getAllSubscriptionAsync = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await getAllSubscriptions();
-      // console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
       return rejectWithValue(
-        error.response.data || "Failed to get all subscriptions",
+        error.response.data || "Failed to get all subscriptions"
       );
     }
-  },
+  }
 );
 
 // DELETE SUBSCRIPTION
@@ -28,15 +27,14 @@ export const deleteSubscriptionAsync = createAsyncThunk(
   async (subscriptionId, { rejectWithValue }) => {
     try {
       const response = await deleteSubscription(subscriptionId);
-      console.log(response);
       return { data: response.data, subscriptionId };
     } catch (error) {
       console.log(error);
       return rejectWithValue(
-        error.response.data || "Failed to delete subscription",
+        error.response.data || "Failed to delete subscription"
       );
     }
-  },
+  }
 );
 
 // GET SUBSCRIPTION
@@ -49,8 +47,8 @@ export const getSubscriptionAsync = createAsyncThunk(
     } catch (error) {
       console.log(error);
       return rejectWithValue(
-        error.response.data || "Failed to delete subscription",
+        error.response.data || "Failed to delete subscription"
       );
     }
-  },
+  }
 );

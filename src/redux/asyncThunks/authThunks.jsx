@@ -13,10 +13,10 @@ export const loginAsyncUser = createAsyncThunk(
   "auth/loginUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const res = await loginUser(userData);
+      const response = await loginUser(userData);
       // Save user info to local storage
       localStorage.setItem("user", JSON.stringify(res.data));
-      return res.data;
+      return response.data;
     } catch (error) {
       console.error("Failed to log in:", error);
       return rejectWithValue(error.response.data || "Failed to log in");
@@ -29,8 +29,8 @@ export const registerAsyncUser = createAsyncThunk(
   "auth/registerUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const res = await registerUser(userData);
-      return res.data;
+      const response = await registerUser(userData);
+      return response.data;
     } catch (error) {
       console.error("Failed to register:", error);
       return rejectWithValue(error.response.data || "Failed to register");
@@ -43,10 +43,10 @@ export const logoutAsyncUser = createAsyncThunk(
   "auth/logoutUser",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await logoutUser();
+      const response = await logoutUser();
       // Remove user info from local storage
       localStorage.removeItem("user");
-      return res.data;
+      return response.data;
     } catch (error) {
       console.error("Failed to log out:", error);
       return rejectWithValue(error.response.data || "Failed to log out");
@@ -59,10 +59,10 @@ export const userProfileAsync = createAsyncThunk(
   "auth/userProfile",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await userProfile();
+      const response = await userProfile();
       // Optionally, you can update the user profile in local storage if needed
       // console.log(res.data)
-      return res.data;
+      return response.data;
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
       return rejectWithValue(

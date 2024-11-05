@@ -34,7 +34,7 @@ const NewList = ({ title }) => {
     if (movies && movies.movies) {
       // Filter out movies already in the list
       const filtered = movies.movies.filter(
-        (movie) => !moviesListId.includes(movie._id),
+        (movie) => !moviesListId.includes(movie._id)
       );
       setAllMovies(filtered);
     }
@@ -50,14 +50,14 @@ const NewList = ({ title }) => {
     setContent(updatedContent);
 
     const updatedMoviesListId = moviesListId.filter(
-      (movieId) => movieId !== id,
+      (movieId) => movieId !== id
     );
     setMoviesListId(updatedMoviesListId);
   };
 
   const handleRowSelection = (selectionModel) => {
     const selectedMoviesData = allMovies.filter((movie) =>
-      selectionModel.includes(movie._id),
+      selectionModel.includes(movie._id)
     );
     setSelectedMovies(selectedMoviesData);
   };
@@ -65,7 +65,7 @@ const NewList = ({ title }) => {
   const handleAddMovies = () => {
     const updatedContent = [...content, ...selectedMovies];
     const uniqueContent = Array.from(
-      new Set(updatedContent.map((movie) => movie._id)),
+      new Set(updatedContent.map((movie) => movie._id))
     ).map((id) => updatedContent.find((movie) => movie._id === id));
 
     setContent(uniqueContent);
@@ -85,7 +85,7 @@ const NewList = ({ title }) => {
     e.preventDefault();
     try {
       await dispatch(
-        createAsyncSingleList({ ...data, content: moviesListId }),
+        createAsyncSingleList({ ...data, content: moviesListId })
       ).unwrap();
       toast.success("Created Successfully");
       navigate("/lists");

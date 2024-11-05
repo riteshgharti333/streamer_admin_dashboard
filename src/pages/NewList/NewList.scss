@@ -2,7 +2,7 @@
   position: relative;
 
   .deleteIcon {
-    color: red;
+    color: #FF0000;
     cursor: pointer;
   }
 
@@ -124,7 +124,7 @@
 
         .formBtn {
           button {
-            background-color: aqua;
+            background-color: #00FFFF;
             border: none;
             padding: 10px;
             font-size: 15px;
@@ -133,7 +133,7 @@
 
             &:last-child {
               margin-left: 10px;
-              background-color: green;
+              background-color: #008000;
             }
           }
         }
@@ -158,16 +158,16 @@
     display: flex;
     flex-direction: row-reverse;
     button {
-      background-color: red;
+      background-color: #FF0000;
       border: none;
       font-size: 15px;
       padding: 10px;
       font-weight: bold;
-      color: white;
+      color: #fff;
       cursor: pointer;
 
       &:first-child {
-        background-color: green;
+        background-color: #008000;
         margin-left: 10px;
       }
     }

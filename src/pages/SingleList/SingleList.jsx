@@ -10,7 +10,7 @@ import {
   deleteAsyncSingleList,
   getAsyncSingleList,
   updateAsyncSingleList,
-} from "../../redux/asyncThunks/listThunks"; // Import the update thunk
+} from "../../redux/asyncThunks/listThunks"; 
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   getAsyncMovies,

@@ -13,8 +13,8 @@ export const getAsyncMovies = createAsyncThunk(
   "movies/getMovies",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await getMovies();
-      return res.data;
+      const response = await getMovies();
+      return response.data;
     } catch (error) {
       console.error("Failed to fetch movies:", error);
       return rejectWithValue(error.response.data || "Failed to fetch movies");
@@ -27,8 +27,8 @@ export const getQueryAsyncMovies = createAsyncThunk(
   "movies/getQueryMovies",
   async (query, { rejectWithValue }) => {
     try {
-      const res = await getQueryMovies(query);
-      return { query, data: res.data };
+      const response = await getQueryMovies(query);
+      return { query, data: response.data };
     } catch (error) {
       console.error("Failed to fetch movies:", error);
       return rejectWithValue(
@@ -43,9 +43,8 @@ export const getAsyncSigleMovie = createAsyncThunk(
   "movies/getSingleMovie",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await getSingleMovie(id);
-      // console.log(res.data);
-      return res.data;
+      const response = await getSingleMovie(id);
+      return response.data;
     } catch (error) {
       console.error("Failed to fetch movies:", error);
       return rejectWithValue(error.response.data || "Failed to fetch movie");

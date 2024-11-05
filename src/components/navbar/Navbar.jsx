@@ -10,9 +10,7 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const { darkMode, dispatch } = useContext(DarkModeContext);
 
-  // Update this line
   const user = useSelector((state) => state.auth?.user);
-
 
   return (
     <div className="navbar">
@@ -34,7 +32,7 @@ const Navbar = () => {
           <div className="item">
             <Link to={"/profile"} className="profileName">
               <PersonIcon className="userIcon" />
-              <p>{user?.user?.name}</p> {/* Optional chaining to safely access name */}
+              <p>{user?.user?.name}</p>{" "}
             </Link>
           </div>
         </div>

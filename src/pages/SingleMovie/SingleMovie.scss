@@ -12,7 +12,7 @@
     }
 
     button {
-      background-color: red;
+      background-color: #FF0000;
       font-size: 16px;
       font-weight: bold;
     }
@@ -159,7 +159,7 @@
       .singleMovieButton {
         button {
           border: none;
-          background-color: red;
+          background-color: #FF0000;
           font-size: 16px;
           padding: 10px;
           margin-right: 10px;
@@ -167,7 +167,7 @@
           cursor: pointer;
 
           &:first-child {
-            background-color: green;
+            background-color: #008000;
           }
         }
       }

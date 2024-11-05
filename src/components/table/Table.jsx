@@ -17,10 +17,10 @@ const List = ({ transactionsColumns, listTitle, isLoading }) => {
     const fetchData = async () => {
       try {
         // Fetch subscription data
-        const res = await dispatch(getAllSubscriptionAsync()).unwrap();
+        const response = await dispatch(getAllSubscriptionAsync()).unwrap();
 
         // Format and sort data by latest start date first
-        const formattedData = res.subscriptionData.map((subscription) => ({
+        const formattedData = response.subscriptionData.map((subscription) => ({
           ...subscription,
           startDate: parseISO(subscription.startDate), // Convert date string to Date object
         }));

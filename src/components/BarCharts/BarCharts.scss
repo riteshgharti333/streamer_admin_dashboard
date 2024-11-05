@@ -1,11 +1,13 @@
 .barCharts {
-  background-color: #fff;
+  background-color: #ffffff; 
   padding: 10px;
   border-radius: 10px;
+
   p {
     margin-bottom: 20px;
-    color: gray;
-    text-transform: uppercase;
     font-weight: bold;
+    font-size: 14px;
+    color: rgb(160, 160, 160);
+    text-transform: uppercase;
   }
 }

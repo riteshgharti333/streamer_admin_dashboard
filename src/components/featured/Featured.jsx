@@ -28,8 +28,8 @@ const Featured = ({ isLoading }) => {
   useEffect(() => {
     const fetchSubscriptionData = async () => {
       try {
-        const res = await dispatch(getAllSubscriptionAsync()).unwrap();
-        const prices = res.subscriptionData || [];
+        const response = await dispatch(getAllSubscriptionAsync()).unwrap();
+        const prices = response.subscriptionData || [];
 
         // Calculating growth of current month
 
@@ -111,7 +111,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         const currentWeekTotal = currentWeekSubscriptions.reduce(
@@ -119,7 +119,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         const currentHalfMonthTotal = currentHalfMonthSubscriptions.reduce(
@@ -127,7 +127,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         ///////////////////////////////
@@ -138,7 +138,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         const lastWeekTotal = lastWeekSubscriptions.reduce(
@@ -146,7 +146,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         const lastHalfMonthTotal = lastHalfMonthSubscriptions.reduce(
@@ -154,7 +154,7 @@ const Featured = ({ isLoading }) => {
             const price = parseFloat(subscription.price);
             return !isNaN(price) ? acc + price : acc;
           },
-          0,
+          0
         );
 
         ////////////////////////////

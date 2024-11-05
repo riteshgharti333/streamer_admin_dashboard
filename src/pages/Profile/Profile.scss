@@ -43,7 +43,7 @@
                 font-family: "Gabarito", sans-serif;
                 background-color: transparent;
                 border: none;
-                border-bottom: 2px solid black;
+                border-bottom: 2px solid #000000;
                 font-size: 24px;
                 font-weight: bold;
                 text-align: center;
@@ -76,7 +76,7 @@
 
         .profileInputForm {
           .formError {
-            color: red;
+            color: #ff0000;
             font-weight: 600;
             margin-top: 5px;
           }
@@ -91,10 +91,10 @@
         border: none;
         font-size: 20px;
         font-weight: 600;
-        background-color: aqua;
+        background-color: #00ffff;
         border-radius: 3px;
         padding: 5px 10px;
-        color: white;
+        color: #fff;
         cursor: pointer;
         letter-spacing: 2px;
         width: 100%;
@@ -108,7 +108,7 @@
         }
 
         &:first-child {
-          background-color: red;
+          background-color: #ff0000;
 
           &:hover {
             background-color: rgb(182, 17, 17);
@@ -137,7 +137,7 @@
 
   .openCancelInfo {
     p {
-      color: black;
+      color: #000000;
     }
     button {
       border-radius: 3px;
@@ -150,7 +150,7 @@
       float: right;
       cursor: pointer;
       margin-left: 10px;
-      background-color: aqua;
+      background-color: #00ffff;
     }
 
     :last-child {

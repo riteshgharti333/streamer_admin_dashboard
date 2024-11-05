@@ -1,13 +1,12 @@
 @import "../../style/responsive.scss";
 
-
 .home {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
-  @include md{
-    min-height:  100vh;
+  @include md {
+    min-height: 100vh;
   }
   .widgets,
   .charts {

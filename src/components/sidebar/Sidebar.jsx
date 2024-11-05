@@ -17,7 +17,6 @@ import { DarkModeContext } from "../../context/darkModeContext";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import { toast } from "react-toastify";
 
-
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("/");
   const dispatchAuth = useDispatch();

@@ -39,8 +39,7 @@
         border: none;
         border-radius: 5px;
         color: var(--btn-bg-color);
-        box-shadow:
-          0px 0px 20px rgba(241, 250, 255, 0.5),
+        box-shadow: 0px 0px 20px rgba(241, 250, 255, 0.5),
           0px 5px 5px -1px rgba(235, 243, 255, 0.25),
           inset 4px 4px 8px rgba(175, 230, 255, 0.5),
           inset -4px -4px 8px rgba(213, 225, 245, 0.35);
@@ -51,9 +50,7 @@
 
         &:is(:focus, :focus-visible, :active) {
           outline: none;
-          box-shadow:
-            0 0 0 3px var(--btn-bg-color),
-            0 0 0 6px var(--btn-bg-2);
+          box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -74,7 +71,7 @@
         .userIcon {
           padding: 1px;
           border-radius: 3px;
-          color: white;
+          color: #fff;
         }
 
         .icon {
@@ -90,9 +87,9 @@
         .counter {
           width: 15px;
           height: 15px;
-          background-color: red;
+          background-color: #FF0000;
           border-radius: 50%;
-          color: white;
+          color: #fff;
           display: flex;
           align-items: center;
           justify-content: center;

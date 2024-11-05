@@ -72,23 +72,20 @@ const Datatable = ({ title, listColumns, movieType }) => {
   // deleting from datatable
   const handleDelete = async (id) => {
     try {
-      let response;
-
-      if (movieType === "movies") {
-        response = await dispatch(deleteAsyncSigleMovie(id)).unwrap();
+      if (movieType === "movies" || movieType === "series") {
+        await dispatch(deleteAsyncSigleMovie(id)).unwrap();
       } else if (movieType === "users") {
-        response = await dispatch(deleteAsyncSingleUser(id)).unwrap();
-      } else if (movieType === "series") {
-        response = await dispatch(deleteAsyncSigleMovie(id)).unwrap();
+        await dispatch(deleteAsyncSingleUser(id)).unwrap();
       } else if (movieType === "lists") {
-        response = await dispatch(deleteAsyncSingleList(id)).unwrap();
+        await dispatch(deleteAsyncSingleList(id)).unwrap();
       } else if (movieType === "subscriptions") {
-        response = await dispatch(deleteSubscriptionAsync(id)).unwrap();
+        await dispatch(deleteSubscriptionAsync(id)).unwrap();
       }
+
       toast.success("Item Deleted");
     } catch (error) {
       toast.error(error.message);
-      console.log(error);
+      console.error(error);
     }
   };
 

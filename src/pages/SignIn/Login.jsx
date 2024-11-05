@@ -23,7 +23,7 @@ export default function Login() {
 
     try {
       const response = await dispatch(
-        loginAsyncUser({ email, password }),
+        loginAsyncUser({ email, password })
       ).unwrap();
       toast.success(response.message);
       navigate("/");

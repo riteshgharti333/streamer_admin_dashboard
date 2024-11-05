@@ -28,7 +28,7 @@ const UpdatePassword = () => {
           };
 
           const response = await dispatch(
-            updatePasswordAsync(payload),
+            updatePasswordAsync(payload)
           ).unwrap();
           toast.success(response.message);
           navigate("/profile");

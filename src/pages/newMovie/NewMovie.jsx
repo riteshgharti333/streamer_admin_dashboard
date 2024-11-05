@@ -40,7 +40,7 @@ const NewMovie = ({ title }) => {
       const fileName = new Date().getTime() + item.label + item.file.name;
       const uploadTask = uploadBytesResumable(
         ref(storageRef, `/items/${fileName}`),
-        item.file,
+        item.file
       );
 
       return new Promise((resolve, reject) => {
@@ -65,7 +65,7 @@ const NewMovie = ({ title }) => {
               console.log("Error getting download URL:", error);
               reject(error);
             }
-          },
+          }
         );
       });
     });
@@ -317,8 +317,8 @@ const NewMovie = ({ title }) => {
             {isUploading
               ? "Uploading..."
               : uploaded === 4
-                ? "Create"
-                : "Upload"}
+              ? "Create"
+              : "Upload"}
           </button>
         </form>
       </div>

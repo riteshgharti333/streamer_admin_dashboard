@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { format } from "date-fns"; // You are using this library
+import { format } from "date-fns";
 import "./chart.scss";
 import {
   AreaChart,
@@ -14,21 +14,7 @@ import {
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
-const monthsOrder = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { months } from "../../datatablesource";
 
 const Chart = ({ aspect, title, dataArray = [], isLoading, sHeight }) => {
   const dispatch = useDispatch();
@@ -71,7 +57,7 @@ const Chart = ({ aspect, title, dataArray = [], isLoading, sHeight }) => {
           }));
 
           // Ensure all months are present in the data
-          monthsOrder.forEach((month) => {
+          months.forEach((month) => {
             if (!formattedData.some((data) => data.name === month)) {
               formattedData.push({ name: month, Total: 0, Subscriptions: 0 });
             }
@@ -79,7 +65,7 @@ const Chart = ({ aspect, title, dataArray = [], isLoading, sHeight }) => {
 
           // Sort the data by the month order
           formattedData.sort((a, b) => {
-            return monthsOrder.indexOf(a.name) - monthsOrder.indexOf(b.name);
+            return months.indexOf(a.name) - months.indexOf(b.name);
           });
 
           // Update the state with the formatted data

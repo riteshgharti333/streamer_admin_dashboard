@@ -28,7 +28,7 @@ const Home = () => {
       setIsLoading(true);
       try {
         const { subscriptionData } = await dispatch(
-          getAllSubscriptionAsync(),
+          getAllSubscriptionAsync()
         ).unwrap();
         const { movies } = await dispatch(getAsyncMovies()).unwrap();
         const { users } = await dispatch(getAsyncUsers()).unwrap();

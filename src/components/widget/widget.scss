@@ -5,22 +5,18 @@
   padding: 10px;
   border-radius: 10px;
   height: 100px;
-  background-color: white;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+  background-color: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: all 0.2s ease-in;
 
   &:hover {
     transform: scale(1.01);
-    box-shadow:
-      10px 10px 10px #bebebe,
-      -1px -1px 15px #ffffff;
+    box-shadow: 10px 10px 10px #bebebe, -1px -1px 15px #ffffff;
     transition: 0.2s ease-in-out;
   }
   .left,
   .right {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,8 +31,6 @@
       width: 100%; // Make the skeleton stretch to its container's width
       height: 100%; // Make the skeleton stretch to its container's height
     }
-
-
 
     .title {
       font-weight: bold;
@@ -54,7 +48,7 @@
     .link {
       width: max-content;
       font-size: 12px;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid #808080;
     }
 
     .percentage {
@@ -63,10 +57,10 @@
       font-size: 14px;
 
       &.positive {
-        color: green;
+        color: #008000;
       }
       &.negative {
-        color: red;
+        color: #ff0000;
       }
     }
 

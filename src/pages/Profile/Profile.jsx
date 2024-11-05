@@ -45,7 +45,7 @@ export default function Profile() {
           const response = await dispatch(updateProfileAsync(values)).unwrap();
           localStorage.setItem(
             "user",
-            JSON.stringify({ ...user, user: response.user }),
+            JSON.stringify({ ...user, user: response.user })
           );
           toast.success(response.message);
           navigate(0);

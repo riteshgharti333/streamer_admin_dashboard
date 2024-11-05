@@ -50,13 +50,13 @@ const Earnings = () => {
     const fetchSubscriptionData = async () => {
       setIsLoading(true);
       try {
-        const res = await dispatch(getAllSubscriptionAsync()).unwrap();
+        const response = await dispatch(getAllSubscriptionAsync()).unwrap();
 
         const { users } = await dispatch(getAsyncUsers()).unwrap();
 
         const totalUsers = users.length;
 
-        const prices = res.subscriptionData || [];
+        const prices = response.subscriptionData || [];
 
         //movies
         const moviesData = prices.filter((item) => {
@@ -104,7 +104,7 @@ const Earnings = () => {
         const last_3_months_Revenue = calculateRevenue(
           startOfCurrentPeriod,
           endOfCurrentPeriod,
-          prices,
+          prices
         );
 
         //Last 6 month
@@ -119,7 +119,7 @@ const Earnings = () => {
         const last_6_months_Revenue = calculateRevenue(
           startOfCurrent_6Period,
           endOfCurrent_6Period,
-          prices,
+          prices
         );
 
         // set_Total_6_Months_Price(last_6_months_Revenue);

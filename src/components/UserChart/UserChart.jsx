@@ -12,21 +12,7 @@ import {
   YAxis,
 } from "recharts";
 import { getAsyncSingleUser } from "../../redux/asyncThunks/userThunks";
-
-const monthsOrder = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { months } from "../../datatablesource";
 
 const UserChart = ({ userId, aspect, title }) => {
   const dispatch = useDispatch();
@@ -80,7 +66,7 @@ const UserChart = ({ userId, aspect, title }) => {
           }));
 
           // Ensure all months are present in the data
-          monthsOrder.forEach((month) => {
+          months.forEach((month) => {
             if (!formattedData.some((data) => data.name === month)) {
               formattedData.push({ name: month, Total: 0, Subscriptions: 0 });
             }
@@ -88,7 +74,7 @@ const UserChart = ({ userId, aspect, title }) => {
 
           // Sort the data by the month order
           formattedData.sort((a, b) => {
-            return monthsOrder.indexOf(a.name) - monthsOrder.indexOf(b.name);
+            return months.indexOf(a.name) - months.indexOf(b.name);
           });
 
           // Update the state with the formatted data
