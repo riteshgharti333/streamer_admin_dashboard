@@ -68,12 +68,12 @@ export default function Login() {
               />
               {showPassword ? (
                 <BiHide
-                  className="inputIcon"
+                  className="viewIcon"
                   onClick={togglePasswordVisibility}
                 />
               ) : (
                 <BiShow
-                  className="inputIcon"
+                  className="viewIcon"
                   onClick={togglePasswordVisibility}
                 />
               )}
