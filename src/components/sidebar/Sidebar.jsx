@@ -8,10 +8,12 @@ import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import InsertChartIcon from "@mui/icons-material/InsertChart";
 import ViewListIcon from "@mui/icons-material/ViewList";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import LogoutIcon from "@mui/icons-material/Logout";
+import LoginIcon from "@mui/icons-material/Login";
+
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutAsyncUser } from "../../redux/asyncThunks/authThunks";
 import { DarkModeContext } from "../../context/darkModeContext";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
@@ -23,6 +25,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const { dispatch } = useContext(DarkModeContext);
+
+  const user = useSelector((state) => state.auth?.user);
 
   const handleLogout = () => {
     dispatchAuth(logoutAsyncUser());
@@ -122,10 +126,19 @@ const Sidebar = () => {
               ))}
             </React.Fragment>
           ))}
-          <li onClick={handleLogout} style={{ cursor: "pointer" }}>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
-          </li>
+          {!user?.user ? (
+            <Link to={"/login"}>
+              <li style={{ cursor: "pointer" }}>
+                <LoginIcon className="icon" />
+                <span>Login</span>
+              </li>
+            </Link>
+          ) : (
+            <li onClick={handleLogout} style={{ cursor: "pointer" }}>
+              <LogoutIcon className="icon" />
+              <span>Logout</span>
+            </li>
+          )}
         </ul>
       </div>
       <div className="bottom">

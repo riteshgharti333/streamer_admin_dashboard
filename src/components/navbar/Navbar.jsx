@@ -29,12 +29,21 @@ const Navbar = () => {
               />
             )}
           </div>
-          <div className="item">
+          { !user ? (
+              <div className="item">
+              <Link to={"/login"} className="profileName">
+                <p>Login</p>
+              </Link>
+            </div>
+          ) : (
+            <div className="item">
             <Link to={"/profile"} className="profileName">
               <PersonIcon className="userIcon" />
-              <p>{user?.user?.name}</p>{" "}
+              <p>{user?.user?.name}</p>
             </Link>
           </div>
+          )}
+        
         </div>
       </div>
     </div>

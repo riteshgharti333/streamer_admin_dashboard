@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { movieInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext, useEffect } from "react";
@@ -28,7 +34,6 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import DashboardLayout from "./components/DashboardLayout/DashboardLayout";
 
-
 // Function to scroll to the top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -45,16 +50,14 @@ function App() {
 
   const { user } = useSelector((state) => state.auth);
 
-  const RequireAuth = ({ children }) => {
-    return user ? children : <Navigate to="login" />;
-  };
+  // const RequireAuth = ({ children }) => {
+  //   return user ? children : <Navigate to="login" />;
+  // };
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
-
-
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Routes>
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
@@ -66,9 +69,9 @@ function App() {
             <Route
               index
               element={
-                <RequireAuth>
-                  <Home />
-                </RequireAuth>
+                // <RequireAuth>
+                <Home />
+                // </RequireAuth>
               }
             />
             <Route path="profile" element={<Profile />} />
@@ -79,21 +82,21 @@ function App() {
                 index
                 element={
                   // <RequireAuth>
-                    <List
-                      title="Users"
-                      listColumns={userColumns}
-                      type="users"
-                      movieType="users"
-                    />
+                  <List
+                    title="Users"
+                    listColumns={userColumns}
+                    type="users"
+                    movieType="users"
+                  />
                   // </RequireAuth>
                 }
               />
               <Route
                 path=":userId"
                 element={
-                  <RequireAuth>
-                    <Single />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <Single />
+                  // </RequireAuth>
                 }
               />
             </Route>
@@ -103,30 +106,30 @@ function App() {
               <Route
                 index
                 element={
-                  <RequireAuth>
-                    <List
-                      title="Add New Movie"
-                      type="movies"
-                      listColumns={movieColumns}
-                      movieType="movies"
-                    />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <List
+                    title="Add New Movie"
+                    type="movies"
+                    listColumns={movieColumns}
+                    movieType="movies"
+                  />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path=":movieId"
                 element={
-                  <RequireAuth>
-                    <SingleMovie />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <SingleMovie />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <RequireAuth>
-                    <NewMovie inputs={movieInputs} title="Add New Movie" />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <NewMovie inputs={movieInputs} title="Add New Movie" />
+                  // </RequireAuth>
                 }
               />
             </Route>
@@ -136,30 +139,30 @@ function App() {
               <Route
                 index
                 element={
-                  <RequireAuth>
-                    <List
-                      title="Add New Webseries"
-                      type="series"
-                      listColumns={movieColumns}
-                      movieType="series"
-                    />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <List
+                    title="Add New Webseries"
+                    type="series"
+                    listColumns={movieColumns}
+                    movieType="series"
+                  />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path=":seriesId"
                 element={
-                  <RequireAuth>
-                    <SingleMovie />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <SingleMovie />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <RequireAuth>
-                    <NewMovie inputs={movieInputs} title="Add New Series" />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <NewMovie inputs={movieInputs} title="Add New Series" />
+                  // </RequireAuth>
                 }
               />
             </Route>
@@ -169,30 +172,30 @@ function App() {
               <Route
                 index
                 element={
-                  <RequireAuth>
-                    <List
-                      title="Add New Lists"
-                      type="list"
-                      listColumns={MovieListColumns}
-                      movieType="lists"
-                    />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <List
+                    title="Add New Lists"
+                    type="list"
+                    listColumns={MovieListColumns}
+                    movieType="lists"
+                  />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path=":listId"
                 element={
-                  <RequireAuth>
-                    <SingleList />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <SingleList />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path="new"
                 element={
-                  <RequireAuth>
-                    <NewList inputs={movieInputs} title="Add New List" />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <NewList inputs={movieInputs} title="Add New List" />
+                  // </RequireAuth>
                 }
               />
             </Route>
@@ -202,22 +205,22 @@ function App() {
               <Route
                 index
                 element={
-                  <RequireAuth>
-                    <List
-                      title="Subscriptions"
-                      type="subscriptions"
-                      listColumns={SubscriptionsColumns}
-                      movieType="subscriptions"
-                    />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <List
+                    title="Subscriptions"
+                    type="subscriptions"
+                    listColumns={SubscriptionsColumns}
+                    movieType="subscriptions"
+                  />
+                  // </RequireAuth>
                 }
               />
               <Route
                 path=":subscriptionId"
                 element={
-                  <RequireAuth>
-                    <SingleSubscriptions />
-                  </RequireAuth>
+                  // <RequireAuth>
+                  <SingleSubscriptions />
+                  // </RequireAuth>
                 }
               />
             </Route>
