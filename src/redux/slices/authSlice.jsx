@@ -43,6 +43,7 @@ const authSlice = createSlice({
       .addCase(registerAsyncUser.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.user = action.payload;
+        localStorage.setItem("user", JSON.stringify(action.payload));
       })
       .addCase(registerAsyncUser.rejected, (state, action) => {
         state.status = "failed";

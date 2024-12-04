@@ -15,13 +15,13 @@ export const loginAsyncUser = createAsyncThunk(
     try {
       const response = await loginUser(userData);
       // Save user info to local storage
-      localStorage.setItem("user", JSON.stringify(res.data));
+      localStorage.setItem("user", JSON.stringify(response.data));
       return response.data;
     } catch (error) {
       console.error("Failed to log in:", error);
       return rejectWithValue(error.response.data || "Failed to log in");
     }
-  },
+  }
 );
 
 // REGISTER ASYNC THUNK
@@ -30,12 +30,14 @@ export const registerAsyncUser = createAsyncThunk(
   async (userData, { rejectWithValue }) => {
     try {
       const response = await registerUser(userData);
+      // Save user info to local storage
+      localStorage.setItem("user", JSON.stringify(response.data));
       return response.data;
     } catch (error) {
       console.error("Failed to register:", error);
       return rejectWithValue(error.response.data || "Failed to register");
     }
-  },
+  }
 );
 
 // LOGOUT ASYNC THUNK
@@ -51,7 +53,7 @@ export const logoutAsyncUser = createAsyncThunk(
       console.error("Failed to log out:", error);
       return rejectWithValue(error.response.data || "Failed to log out");
     }
-  },
+  }
 );
 
 // USER PROFILE ASYNC THUNK
@@ -66,10 +68,10 @@ export const userProfileAsync = createAsyncThunk(
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
       return rejectWithValue(
-        error.response.data || "Failed to fetch user profile",
+        error.response.data || "Failed to fetch user profile"
       );
     }
-  },
+  }
 );
 
 // UPDATE PROFILE ASYNC THUNK
@@ -82,10 +84,10 @@ export const updateProfileAsync = createAsyncThunk(
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
       return rejectWithValue(
-        error.response.data || "Failed to fetch user profile",
+        error.response.data || "Failed to fetch user profile"
       );
     }
-  },
+  }
 );
 
 // UPDATE PASSWORD ASYNC THUNK
@@ -98,8 +100,8 @@ export const updatePasswordAsync = createAsyncThunk(
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
       return rejectWithValue(
-        error.response.data || "Failed to fetch user profile",
+        error.response.data || "Failed to fetch user profile"
       );
     }
-  },
+  }
 );

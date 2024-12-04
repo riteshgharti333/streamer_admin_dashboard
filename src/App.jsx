@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { movieInputs } from "./formSource";
 import "./style/dark.scss";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import NewMovie from "./pages/newMovie/NewMovie";
 import SingleMovie from "./pages/SingleMovie/SingleMovie";
@@ -28,6 +28,18 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import DashboardLayout from "./components/DashboardLayout/DashboardLayout";
 
+
+// Function to scroll to the top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to top
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -39,7 +51,10 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
+
+
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
@@ -63,14 +78,14 @@ function App() {
               <Route
                 index
                 element={
-                  <RequireAuth>
+                  // <RequireAuth>
                     <List
                       title="Users"
                       listColumns={userColumns}
                       type="users"
                       movieType="users"
                     />
-                  </RequireAuth>
+                  // </RequireAuth>
                 }
               />
               <Route
