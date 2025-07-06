@@ -30,7 +30,7 @@ const NewMovie = ({ title }) => {
   const uploadFile = async (items) => {
     if (!items) return;
 
-    setIsUploading(true); // Start uploading
+    setIsUploading(true); 
 
     const storageRef = ref(storage);
 

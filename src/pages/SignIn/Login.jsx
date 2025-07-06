@@ -82,12 +82,12 @@ export default function Login() {
           <button className="loginButton" type="submit">
             Login
           </button>
-          <span>
+          {/* <span>
             New to streamer
             <span className="signupLink">
               <Link to="/register"> Sign Up</Link>
             </span>
-          </span>
+          </span> */}
         </form>
       </div>
     </div>
